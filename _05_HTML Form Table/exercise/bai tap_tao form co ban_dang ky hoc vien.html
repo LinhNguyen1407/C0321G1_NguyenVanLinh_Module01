@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai tap_tao form co ban_dang ky hoc vien</title>
+    <style>
+        form {
+            border: solid;
+            width: 500px;
+            background-color: #ffffff;
+            padding-left: 8px;
+        }
+
+        h2 {
+            background-color: blue;
+            color: white;
+            margin: 5px 0;
+            margin-right: 8px;
+            text-align: center;
+        }
+        label, input, select, textarea {
+            margin-bottom: 8px;
+        }
+        #submit {
+            margin-left: 30px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="dangky.html" method="get">
+    <h2>ĐĂNG KÝ HỌC VIÊN</h2>
+    <table>
+        <tr>
+            <td><label>Họ và Tên</label></td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td><label>Ngày sinh</label></td>
+            <td><input type="date" name="birthday"></td>
+        </tr>
+        <tr>
+            <td><label>Giới tính</label></td>
+            <td><input type="radio" name="gender">Nam
+                <input type="radio" name="gender">Nữ
+            </td>
+        </tr>
+        <tr>
+            <td><label>Địa chỉ</label></td>
+            <td><textarea></textarea></td>
+        </tr>
+        <tr>
+            <td><label>Lớp</label></td>
+            <td><select>
+                <option value="Toan">Toán</option>
+                <option value="Ly">Lý</option>
+                <option value="Hoa">Hóa</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td><label>Email</label></td>
+            <td><input type="text" name="email"></td>
+        </tr>
+        <tr>
+            <td><label>Điện thoại</label></td>
+            <td><input type="text" name="phone"></td>
+        </tr>
+    </table><br>
+    <input type="submit" name="submit" id="submit" value="Đăng ký">
+    <input type="reset" name="reset" id="reset" value="Nhập lại">
+</form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai tap_tao form dang ky nguoi dung</title>
+    <style>
+        form {
+            font-weight: bold;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+        #submit {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form action="http://demo.codegym.vn/6/registration_form/register.php" method="post" name="register">
+        <h2>Thông tin người dùng</h2>
+        <label for="name" name="name">Họ và tên</label><br>
+        <input id="name" type="text"><br>
+        <label for="mail" name="mail">Email</label><br>
+        <input id="mail" type="text"><br>
+        <label for="phone" name="phone">Số điện thoại</label><br>
+        <input id="phone" type="text"><br>
+        <label name="gender">Giới tính</label><br>
+        <input type="radio" name="gender1" id="male" checked>
+        <label for="male">Nam</label>
+        <input type="radio" name="gender1" id="female">
+        <label for="female">Nữ</label><br>
+        <input type="submit" id="submit" value="Submit">
+    </form>
+</body>
+</html>
