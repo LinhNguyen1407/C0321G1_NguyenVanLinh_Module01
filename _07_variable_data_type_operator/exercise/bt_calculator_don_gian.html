@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt_calculator</title>
+</head>
+<body>
+    <p>Nhập số thứ 1:</p>
+    <input type="text" id="input1">
+    <p>Nhập số thứ 2:</p>
+    <input type="text" id="input2">
+    <br><br>
+    <button id="add" value="add" onclick="calculate('add')">Add</button>
+    <button id="sub" value="sub" onclick="calculate('sub')">Sub</button>
+    <button id="mul" value="mul" onclick="calculate('mul')">Mul</button>
+    <button id="div" value="div" onclick="calculate('div')">Div</button>
+    <br>
+    <p>Kết quả</p>
+    <input id="result">
+    <script>
+        function calculate(temp) {
+            let a = parseInt(document.getElementById("input1").value);
+            let b = parseInt(document.getElementById("input2").value);
+            if (temp ==="add") {
+                let c = a + b;
+                document.getElementById("result").value = c;
+            }
+            if (temp ==="sub") {
+                let c = a - b;
+                document.getElementById("result").value = c;
+            }
+            if (temp ==="mul") {
+                let c = a * b;
+                document.getElementById("result").value = c;
+            }
+            if (temp ==="div") {
+                let c = a / b;
+                document.getElementById("result").value = c;
+            }
+        }
+    </script>
+</body>
+</html>

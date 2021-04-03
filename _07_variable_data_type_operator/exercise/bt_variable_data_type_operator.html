@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt_variable_data type_operator</title>
+</head>
+<body>
+<script>
+    //hiển thị điểm
+    let inputmath = prompt("Điểm môn Toán:");
+    let inputphysical = prompt("Điểm môn Lý:");
+    let inputchemistry = prompt("Điểm môn Hóa:");
+    let inputbiological = prompt("Điểm môn Sinh:");
+    let math = parseInt(inputmath);
+    let physical = parseInt(inputphysical);
+    let chemistry = parseInt(inputchemistry);
+    let biological = parseInt(inputbiological);
+    let sum = math + physical + chemistry + biological;
+    document.write("Tổng điểm 4 môn: " + sum );
+    document.write("<br>");
+    let average = sum/4;
+    document.write("Điểm trung bình: " + average);
+    document.write("<br>");
+
+    //hiển thị nhiệt độ
+    let inputTemperC = prompt("Nhiệt độ C:");
+    let temperC = parseInt(inputTemperC);
+    let temperF = 9*temperC/5 + 32;
+    document.write("Nhiệt độ C: " + temperC );
+    document.write("<br>");
+    document.write("Nhiệt độ F: " + temperF );
+    document.write("<br>");
+
+    //tính diện tích hình tròn
+    let inputRadius = prompt("Bán kính của hình tròn:");
+    let radius = parseInt(inputRadius);
+    let acreage = 3.14159 * radius * radius;
+    document.write("Bán kính của hình tròn: " + radius);
+    document.write("<br>");
+    document.write("Diện tích của hình tròn: "+ acreage);
+    document.write("<br>");
+
+    //tính chu vi hình tròn
+    let perimeter = 2 * 3.14159 * radius;
+    document.write("Chu vi của hình tròn: " + perimeter );
+</script>
+</body>
+</html>

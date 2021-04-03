@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>th_variable</title>
+</head>
+<body>
+<script>
+    let i = 10;
+    let f = 20.5;
+    let b = true;
+    let s = 'Hà Nội';
+    document.writeln('i = ' + i);
+    document.write('<br/>');
+    document.write('f = ' + f);
+    document.write('<br/>');
+    document.write('b = ' + b);
+    document.write('<br/>');
+    document.write('s = ' + s);
+    document.write('<br/>');
+
+    let width = 20;
+    let height = 10;
+    let area = width * height;
+    document.write('Area = ' + area);
+    document.write('<br/>');
+
+    let x = prompt("Nhập số thứ 1:");
+    let y = prompt("Nhập số thứ 2:");
+    document.write('x = ' + x);
+    document.write('<br/>');
+    document.write('y = ' + y);
+    document.write('<br/>');
+    let m = parseInt(x) % parseInt(y);
+    document.write("Số dư của phép chia x cho y là: " + m);
+    if ( m === 0) {
+        alert("x là bội của y");
+    }
+    else {
+        alert("x không phải là bội của y");
+    }
+</script>
+</body>
+</html>
