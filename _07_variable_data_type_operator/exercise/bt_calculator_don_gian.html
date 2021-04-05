@@ -21,19 +21,16 @@
         function calculate(temp) {
             let a = parseInt(document.getElementById("input1").value);
             let b = parseInt(document.getElementById("input2").value);
-            if (temp ==="add") {
+            if (temp === "add") {
                 let c = a + b;
                 document.getElementById("result").value = c;
-            }
-            if (temp ==="sub") {
+            } else if (temp === "sub") {
                 let c = a - b;
                 document.getElementById("result").value = c;
-            }
-            if (temp ==="mul") {
+            } else if (temp === "mul") {
                 let c = a * b;
                 document.getElementById("result").value = c;
-            }
-            if (temp ==="div") {
+            } else {
                 let c = a / b;
                 document.getElementById("result").value = c;
             }
