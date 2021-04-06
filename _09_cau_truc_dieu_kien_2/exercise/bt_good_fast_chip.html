@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt_good_fast_chip</title>
+    <style>
+        div {
+            background-color: darkgray;
+            width: 300px;
+            height: 400px;
+        }
+        input {
+            width: 100px;
+            height: 50px;
+            margin: 30px 50px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="range" id="good" value="0" min="0" max="1" onclick="change('good')">
+        <label for="good">Good</label>
+        <br>
+        <input type="range" id="fast" value="0" min="0" max="1" onclick="change('fast')">
+        <label for="fast">Fast</label>
+        <br>
+        <input type="range" id="chip" value="0" min="0" max="1" onclick="change('chip')">
+        <label for="chip">Chip</label>
+        <script>
+            function change(temp) {
+                if (temp === 'good') {
+                    document.getElementById("good").value = 1;
+                    document.getElementById("fast").value = 0;
+                    document.getElementById("chip").value = 0;
+                } else if (temp === 'fast') {
+                    document.getElementById("good").value = 0;
+                    document.getElementById("fast").value = 1;
+                    document.getElementById("chip").value = 0;
+                } else {
+                    document.getElementById("good").value = 0;
+                    document.getElementById("fast").value = 0;
+                    document.getElementById("chip").value = 1;
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

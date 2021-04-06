@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt_cau truc dieu kien 2</title>
+</head>
+<body>
+    <script>
+        //bài 7 phương trình bậc 2
+        let a2 = parseInt(prompt("Nhập hệ số a: "));
+        let b2 = parseInt(prompt("Nhập hệ số b: "));
+        let c2 = parseInt(prompt("Nhập hệ số c: "));
+        let delta = b2*b2 - 4*a2*c2;
+        let n1 = (-b2+Math.sqrt(delta))/(2*a2);
+        let n2 = (-b2-Math.sqrt(delta))/(2*a2);
+        let n3 = (-b2)/(2*a2);
+        if (a2 !== 0)
+            if (delta > 0)
+                document.write("phương trình có 2 nghiệm: " + n1 + " , " + n2);
+            else if (delta === 0)
+                document.write("phương trình có nghiệm kép: " + n3);
+            else
+                document.write("phương trình vô nghiệm");
+        else
+            document.write("đây là phương trình bậc 1");
+    </script>
+</body>
+</html>

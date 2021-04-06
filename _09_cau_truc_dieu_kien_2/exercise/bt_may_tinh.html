@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt_may tinh</title>
+    <style>
+        table {
+            border-style: solid;
+            border-color: black;
+        }
+        .btn {
+            height: 45px;
+            width: 45px;
+            text-align: center;
+            background-color: aquamarine;
+        }
+        #hienthi {
+            height: 40px;
+            width: 185px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4"><input id="hienthi"></td>
+        </tr>
+        <tr>
+            <td><button class="btn" value="1" onclick="nhap(this.value)">1</button></td>
+            <td><button class="btn" value="2" onclick="nhap(this.value)">2</button></td>
+            <td><button class="btn" value="3" onclick="nhap(this.value)">3</button></td>
+            <td><button class="btn" value="+" onclick="nhap(this.value)">+</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn" value="4" onclick="nhap(this.value)">4</button></td>
+            <td><button class="btn" value="5" onclick="nhap(this.value)">5</button></td>
+            <td><button class="btn" value="6" onclick="nhap(this.value)">6</button></td>
+            <td><button class="btn" value="-" onclick="nhap(this.value)">-</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn" value="7" onclick="nhap(this.value)">7</button></td>
+            <td><button class="btn" value="8" onclick="nhap(this.value)">8</button></td>
+            <td><button class="btn" value="9" onclick="nhap(this.value)">9</button></td>
+            <td><button class="btn" value="*" onclick="nhap(this.value)">*</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn" value="c" onclick="xoa()">C</button></td>
+            <td><button class="btn" value="0" onclick="nhap(this.value)">0</button></td>
+            <td><button class="btn" value="=" onclick="tinh()">=</button></td>
+            <td><button class="btn" value="/" onclick="nhap(this.value)">/</button></td>
+        </tr>
+    </table>
+    <script>
+        function nhap(temp) {
+            document.getElementById('hienthi').value += temp;
+        }
+        function xoa() {
+            document.getElementById('hienthi').value = "";
+        }
+        function tinh() {
+            let result = document.getElementById('hienthi').value;
+            document.getElementById('hienthi').value = eval(result);
+        }
+    </script>
+</body>
+</html>

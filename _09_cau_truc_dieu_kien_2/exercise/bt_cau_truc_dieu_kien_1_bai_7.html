@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt_cau truc dieu kien</title>
+</head>
+<body>
+    <script>
+        //bài 7 tính cước điện thoại
+        let minute =parseFloat(prompt("Thời gian gọi: "));
+        let money = 0;
+        if (minute > 2000)
+            money = minute * 500;
+        else if (minute > 1000)
+            money = minute * 1000;
+        else if (minute > 500)
+            money = minute * 1200;
+        else
+            money = minute * 1500;
+        alert("Tiền cước điện thoại tháng này: " + money + " vnd");
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Bài 6 tính hoa hồng theo doanh thu
+    let doanhThu =parseFloat(prompt("Doanh thu: "));
+    let hoaHong = 0;
+    if (doanhThu > 1000)
+        hoaHong = doanhThu * 1/100;
+    else if (doanhThu > 500)
+        hoaHong = doanhThu * 0.5/100;
+    else if (doanhThu > 200)
+        hoaHong = doanhThu * 0.2/100;
+    else
+        hoaHong = 0;
+    alert("Tiền hoa hồng tháng này bạn đạt được: " + hoaHong + " triệu vnd");
+</script>
+</body>
+</html>

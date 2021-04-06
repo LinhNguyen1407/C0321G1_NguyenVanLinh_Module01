@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //bài 5 xếp hạng học lực
+    let diemKiemTra = parseFloat(prompt("Điểm bài kiểm tra: "));
+    let diemGiuaKi = parseFloat(prompt("Điểm thi giữa kì: "));
+    let diemCuoiKi = parseFloat(prompt("Điểm thi cuối kì: "));
+    aver = (diemKiemTra*2 + diemGiuaKi*3 + diemCuoiKi*5)/10;
+    alert("Điểm trung bình: " + aver);
+    if (aver >= 8)
+        alert("Học sinh giỏi");
+    else if (aver >= 6.5)
+        alert("Học sinh khá");
+    else if (aver >= 5.5)
+        alert("Học sinh trung bình");
+    else if (aver >= 4)
+        alert("Học sinh yếu");
+    else
+        alert("Học sinh kém");
+</script>
+</body>
+</html>
