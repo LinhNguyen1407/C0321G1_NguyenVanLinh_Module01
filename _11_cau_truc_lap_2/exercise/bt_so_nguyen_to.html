@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bt_so nguyen to</title>
+</head>
+<body>
+    <script>
+        let num = parseInt(prompt("Số lượng số nguyên tố cần hiển thị: "));
+        let a = 2;
+        let b = 0;
+        document.write("Danh sách số nguyên tố: " + "<br>");
+        for (count = 0; count < num; ) {
+            for (i = 2; i <= (Math.sqrt(a)); i++) {
+                if (a % i === 0) {
+                    b++;
+                }
+            }
+            if (b === 0) {
+                document.write(a + "<br>");
+                count++;
+            } else {
+                b = 0;
+            }
+            a++;
+        }
+    </script>
+</body>
+</html>

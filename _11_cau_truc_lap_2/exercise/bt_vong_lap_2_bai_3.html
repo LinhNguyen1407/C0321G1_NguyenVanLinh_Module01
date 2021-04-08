@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //bài 3 in tam giác
+    let i1, j1;
+    for (i1 = 0; i1 < 10; i1++) {
+        j1 = 0;
+        do {
+            document.write("*")
+            j1++;
+        } while (j1 <= i1)
+        document.write("<br>");
+    }
+    document.write("<br>");
+
+    let i2, j2;
+    for (i2 = 10; i2 > 0; i2--) {
+        j2 = 1;
+        do {
+            document.write("*")
+            j2++;
+        } while (j2 <= i2)
+        document.write("<br>");
+    }
+    document.write("<br>");
+
+    let i3, j3;
+    for (i3=0; i3<10; i3++) {
+        for (j3=9; j3>=0; j3--) {
+            if (j3 <= i3)
+                document.write("*");
+            else
+                document.write("&nbsp&nbsp");
+        }
+        document.write("<br>");
+    }
+    document.write("<br>");
+
+    let i4, j4;
+    for (i4=0; i4<10; i4++) {
+        for (j4=0; j4<10; j4++) {
+            if (j4 >= i4)
+                document.write("*");
+            else
+                document.write("&nbsp&nbsp");
+        }
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>

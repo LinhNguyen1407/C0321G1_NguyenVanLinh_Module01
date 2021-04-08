@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //bài 6 tính tổng 30 số tự nhiên đầu tiên chia hết cho 7
+    let a = 0;
+    let sum = 0;
+    let num = 0;
+    let count = 0;
+    do {
+        num = a % 7;
+        if (num === 0) {
+            sum += a;
+            count++;
+        }
+        a++;
+    } while (count < 30)
+    document.write("Tổng: " + sum);
+</script>
+</body>
+</html>

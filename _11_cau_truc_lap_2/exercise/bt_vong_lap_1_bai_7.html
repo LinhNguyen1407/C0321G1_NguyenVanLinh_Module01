@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //bài 7 in từ 1 đến 100
+    let a = 1;
+    let num1 = 0;
+    let num2 = 0;
+    let b = 0;
+    do {
+        num1 = a % 3;
+        num2 = a % 5;
+        b = a;
+        if (num1 === 0)
+            a = "Fizz";
+        if (num2 === 0)
+            a = "Buzz";
+        if ((num1 === 0) && (num2 === 0))
+            a = "FizzBuzz" ;
+        document.write(a + "<br>");
+        a = b + 1;
+    } while (a <= 100)
+</script>
+</body>
+</html>

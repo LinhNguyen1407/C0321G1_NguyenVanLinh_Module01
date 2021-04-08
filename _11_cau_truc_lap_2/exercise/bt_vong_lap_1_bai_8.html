@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn" onclick="playgame()">Play</button>
+<script>
+    function playgame() {
+        let min = parseInt(prompt("Nhập giá trị đầu của dãy số: "));
+        let max = parseInt(prompt("Nhập giá trị cuối của dãy số: "));
+        let numRandom = Math.floor(Math.random()*(max-min+1)) + min;
+        let numChoice;
+        let count = 0;
+        do {
+            numChoice = parseInt(prompt("Nhập vào số bạn dự đoán: "));
+            if (numChoice === numRandom)
+                alert("Chúc mừng bạn đã chiến thắng");
+            else if (numChoice < numRandom)
+                alert("Số bạn chọn nhỏ hơn");
+            else
+                alert("Số bạn chọn lớn hơn");
+            count++;
+        } while (count < 3 && numChoice !== numRandom)
+    }
+</script>
+</body>
+</html>
