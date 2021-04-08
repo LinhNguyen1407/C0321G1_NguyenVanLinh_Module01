@@ -15,14 +15,16 @@
         let count = 0;
         do {
             numChoice = parseInt(prompt("Nhập vào số bạn dự đoán: "));
-            if (numChoice === numRandom)
+            if (numChoice === numRandom) {
                 alert("Chúc mừng bạn đã chiến thắng");
+                break;
+            }
             else if (numChoice < numRandom)
                 alert("Số bạn chọn nhỏ hơn");
             else
                 alert("Số bạn chọn lớn hơn");
             count++;
-        } while (count < 3 && numChoice !== numRandom)
+        } while (count < 3)
     }
 </script>
 </body>
