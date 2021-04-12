@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrayNum1 = [];
+    let x1 = 0;
+    let str1 = "";
+    while (true) {
+        str1 = (prompt("Nhập các phần tử của mảng 1: "));
+        if (str1 === "q")
+            break;
+        num1 = parseInt(str1);
+        arrayNum1[x1] = num1;
+        x1++;
+    }
+    document.write("Cho mảng 1: " + arrayNum1 + "<br>" );
+    let arrayNum2 = [];
+    let x2 = 0;
+    let str2 = "";
+    while (true) {
+        str2 = (prompt("Nhập các phần tử của mảng 2: "));
+        if (str2 === "q")
+            break;
+        num2 = parseInt(str2);
+        arrayNum2[x2] = num2;
+        x2++;
+    }
+    document.write("Cho mảng 2: " + arrayNum2 + "<br>" );
+    let arrayNum3 = [];
+    arrayNum3 = arrayNum1.concat(arrayNum2);
+    document.write("Mảng 3 nối từ mảng 1 và mảng 2: " + arrayNum3);
+</script>
+</body>
+</html>

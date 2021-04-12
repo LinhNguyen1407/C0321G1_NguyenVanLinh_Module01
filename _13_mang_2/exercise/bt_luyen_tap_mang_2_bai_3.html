@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [
+        ["a", "b", "c"],
+        ["d", "e", "f"],
+        ["g", "h", "k"]
+    ];
+    let count = 0;
+    for (let i in arr)
+    {
+        console.log("row " + i);
+        for (let j in arr[i])
+        {
+            console.log(" " + arr[i][j]);
+            count++;
+        }
+    }
+    alert("số phần tử trong mảng: " + count);
+</script>
+</body>
+</html>

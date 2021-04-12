@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = 0;
+    let arrayNum = [];
+    let x = 0;
+    let str = "";
+    while (true) {
+        str = (prompt("Nhập các phần tử của mảng: "));
+        if (str === "q")
+            break;
+        num = parseInt(str);
+        arrayNum[x] = num;
+        x++;
+    }
+    document.write("Cho mảng sau: " + arrayNum + "<br>" );
+    document.write("Các phần tử lớn hơn hoặc bằng 10:" + "<br>");
+    for (i=0; i<x; i++) {
+        if (arrayNum[i] >= 10)
+            document.write("Phần tử " + arrayNum[i] + " có chỉ số là " + i + "<br>");
+    }
+</script>
+</body>
+</html>

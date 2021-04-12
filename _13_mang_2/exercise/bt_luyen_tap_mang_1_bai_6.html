@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = 0;
+    let arrayNum = [];
+    let x = 0;
+    let str = "";
+    while (true) {
+        str = (prompt("Nhập các phần tử của mảng: "));
+        if (str === "q")
+            break;
+        num = parseInt(str);
+        arrayNum[x] = num;
+        x++;
+    }
+    document.write("Cho mảng sau: " + arrayNum + "<br>" );
+    let a = parseInt(prompt("Nhập số bạn chọn: "));
+    if (arrayNum.indexOf(a) !== -1)
+        document.write("Số bạn chọn nằm trong mảng");
+    else
+        document.write("Số bạn chọn không nằm trong mảng")
+</script>
+</body>
+</html>

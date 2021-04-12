@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = 0;
+    let arrayNum = [];
+    let x = 0;
+    let str = "";
+    while (true) {
+        str = (prompt("Nhập các phần tử của mảng: "));
+        if (str === "q")
+            break;
+        num = parseInt(str);
+        arrayNum[x] = num;
+        x++;
+    }
+    document.write("Cho mảng sau: " + arrayNum + "<br>" );
+    let arraySort = arrayNum.sort(function (a, b) {
+        return b-a;
+    });
+    document.write("Sắp xếp phần tử giảm dần: " + arraySort);
+</script>
+</body>
+</html>

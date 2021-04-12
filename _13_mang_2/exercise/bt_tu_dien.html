@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>English</p>
+<input id="english"/>
+<button class="btn" onclick="translate1()">Translate</button>
+<p>Vietnamese</p>
+<input id="vietnamese"/>
+<button class="btn" onclick="reset1()">Reset</button>
+<script>
+    function translate1() {
+        let eng = ["hello", "dog", "cat", "car", "home", "dad", "mom"];
+        let vn = ["xin chao", "cho", "meo", "oto", "nha", "bo", "me"];
+        let input = document.getElementById("english").value;
+        if (eng.indexOf(input) !== -1) {
+            let index = eng.indexOf(input);
+            document.getElementById("vietnamese").value = vn[index];
+        } else
+            alert("not found");
+    }
+    function reset1() {
+        document.getElementById("english").value = "";
+        document.getElementById("vietnamese").value = "";
+    }
+</script>
+</body>
+</html>
