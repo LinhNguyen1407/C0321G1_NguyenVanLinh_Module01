@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let star = prompt("Nhập tên ngôi sao: ");
+    let result = 0;
+    if (checkStar(star)) {
+        alert(result);
+    }
+    else {
+        alert("not found star");
+    }
+
+    function checkStar(star) {
+        for (let index in arr1) {
+            if (star === arr1[index]) {
+                result =  arr2[index];
+                return true
+            }
+        }
+        return false;
+    }
+</script>
+</body>
+</html>

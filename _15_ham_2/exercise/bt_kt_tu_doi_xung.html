@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("Nhập vào chuỗi cần kiểm tra:");
+    if (checkString(str)) {
+        alert("Đây là chuỗi đối xứng");
+    } else {
+        alert("Đây không phải là chuỗi đối xứng")
+    }
+
+    function checkString(str) {
+        let first = 0;
+        let last = str.length - 1;
+        if (first >= last) {
+            return true;
+        } else if (str[first] !== str[last]) {
+            return false;
+        } else {
+            str = str.slice(1, str.length - 1);
+            return checkString(str);
+        }
+    }
+</script>
+</body>
+</html>

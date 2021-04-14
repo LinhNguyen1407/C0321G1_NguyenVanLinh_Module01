@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let b = parseFloat(prompt("Nhập bán kính của hình tròn: "));
+    let area = calculateArea(b);
+    let peri = calculatePeri(b);
+    alert("Diện tích của hình tròn: " + area);
+    alert("Chu vi của hình tròn: " + peri);
+
+    function calculateArea(a) {
+        return 3.1416*a*a;
+    }
+    function calculatePeri(a) {
+        return 2*3.1416*a;
+    }
+</script>
+</body>
+</html>

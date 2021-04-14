@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Add New Product</h2>
+    <input type="text" id="newProduct" placeholder="New Product">
+    <button id="add" onclick="addProduct()">Add</button>
+    <h2>Display All Product</h2>
+    <p id="productApp"></p>
+    <script>
+        let arrayProduct = ["Sony", "Samsung", "Nokia", "Iphone"];
+        display();
+
+        function display() {
+            let listProduct = "<table>"
+            for (let i = 0; i < arrayProduct.length; i++) {
+                listProduct += "<tr>";
+                for (let j = 0; j < 3; j++) {
+                    if (j === 0)
+                        listProduct += "<td><span>" + arrayProduct[i] + "</span>";
+                    else if (j === 1)
+                        listProduct += "<td><button onclick=\"editProduct(" + i + ")\">Edit</button>";
+                    else
+                        listProduct += "<td><button onclick=\"deleteProduct(" + i + ")\">Delete</button>";
+                }
+                listProduct += "</tr>";
+            }
+            listProduct += "</table>"
+            document.getElementById('productApp').innerHTML = listProduct;
+        }
+
+        function addProduct() {
+            arrayProduct[arrayProduct.length] = document.getElementById('newProduct').value;
+            display();
+            document.getElementById('newProduct').value = "";
+
+        }
+
+        function editProduct(index) {
+            arrayProduct[index] = prompt(" Replace by product: ");
+            display();
+        }
+
+        function deleteProduct(index) {
+            arrayProduct.splice(index, 1);
+            display();
+        }
+    </script>
+</body>
+</html>

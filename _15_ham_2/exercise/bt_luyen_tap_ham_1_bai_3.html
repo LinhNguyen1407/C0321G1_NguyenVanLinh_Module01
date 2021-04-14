@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Nhập vào số thứ 1:"));
+    let b = parseInt(prompt("Nhập vào số thứ 2: "));
+    checkNum(a, b);
+    function checkNum(a, b) {
+        if (a>b)
+            alert(a + " lớn hơn " + b);
+        else {
+            alert(a + " không lớn hơn " + b);
+            return a + b;
+        }
+    }
+</script>
+</body>
+</html>
