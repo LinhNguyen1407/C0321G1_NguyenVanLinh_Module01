@@ -33,10 +33,19 @@
         }
 
         function addProduct() {
-            arrayProduct[arrayProduct.length] = document.getElementById('newProduct').value;
-            display();
-            document.getElementById('newProduct').value = "";
-
+            let addProduct = document.getElementById('newProduct').value;
+            if (addProduct === "") {
+                alert("Not found product to add");
+            }
+            else if (arrayProduct.indexOf(addProduct) !== -1) {
+                alert("Product has been added ");
+                document.getElementById('newProduct').value = "";
+            }
+            else {
+                arrayProduct[arrayProduct.length] = document.getElementById('newProduct').value;
+                display();
+                document.getElementById('newProduct').value = "";
+            }
         }
 
         function editProduct(index) {
@@ -45,8 +54,11 @@
         }
 
         function deleteProduct(index) {
-            arrayProduct.splice(index, 1);
-            display();
+            let confirmDelete = confirm("Delete this product ! Sure ?")
+            if (confirmDelete) {
+                arrayProduct.splice(index, 1);
+                display();
+            }
         }
     </script>
 </body>
