@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Temperature(temperC) {
+        const TEMP_K = 273;
+        const TEMP_F1 = 1.8;
+        const TEMP_F2 = 32
+        this.temperC = temperC;
+        this.changeToF = function () {
+            return TEMP_F1 * this.temperC + TEMP_F2;
+        }
+        this.changeToK = function () {
+            return this.temperC + TEMP_K;
+        }
+    }
+
+    let tempC = 0;
+    do {
+        tempC = parseInt(prompt("Nhập nhiệt độ C: "));
+    } while (tempC < -273)
+    let temperature = new Temperature(tempC);
+    alert("Nhiệt độ chuyển qua độ F: " + temperature.changeToF());
+    alert("Nhiệt độ chuyển qua độ K: " + temperature.changeToK());
+</script>
+</body>
+</html>
