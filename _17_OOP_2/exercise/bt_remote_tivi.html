@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Remote {
+        constructor(_channel, _volume) {
+            this.channel = _channel;
+            this.volume = _volume;
+        }
+
+        connectTivi(tivi) {
+            this.tivi = tivi;
+        }
+
+        controlToChannel(_channel) {
+            this.tivi.channelOnline = _channel;
+        }
+
+        controlVolume(_volume) {
+            this.tivi.volume += _volume;
+        }
+
+        turnOn() {
+            this.tivi.powerOn();
+        }
+
+        turnOff() {
+            this.tivi.powerOff();
+        }
+    }
+
+    class Tivi {
+        constructor(_channelOnline, _volume, _status) {
+            this.channelOnline = _channelOnline;
+            this.volume = _volume;
+            this.status = _status;
+        }
+
+        getChannelOnline() {
+            return this.channelOnline;
+        }
+
+        getVolume() {
+            return this.volume;
+        }
+
+        powerOn() {
+            this.status = true;
+        }
+
+        powerOff() {
+            this.status = false;
+        }
+    }
+
+    let tivi = new Tivi(7, 50, false);
+    let remote = new Remote();
+    remote.connectTivi(tivi);
+    document.write("Bật ti vi" + "<br>");
+    if (!tivi.status) {
+        remote.turnOn();
+    }
+    document.write(tivi.status + "<br>");
+    document.write("Kênh ti vi đang mở: " + tivi.getChannelOnline() + "<br>");
+    remote.controlToChannel(3);
+    document.write("Kênh ti vi đang mở: " + tivi.getChannelOnline() + "<br>");
+    document.write("Âm lượng hiện tại: " + tivi.getVolume() + "<br>");
+    remote.controlVolume(5);
+    document.write("Âm lượng tăng lên 5: " + tivi.getVolume() + "<br>");
+    remote.controlVolume(-10);
+    document.write("Âm lượng giảm đi 5: " + tivi.getVolume() + "<br>");
+    document.write("Tắt ti vi" + "<br>");
+    remote.turnOff();
+    document.write(tivi.status + "<br>");
+
+</script>
+</body>
+</html>

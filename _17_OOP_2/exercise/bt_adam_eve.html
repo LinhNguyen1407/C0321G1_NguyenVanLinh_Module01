@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(_weight) {
+            this.weight = _weight;
+        }
+
+        decrease() {
+            this.weight--;
+        }
+
+        isEmpty() {
+            if (this.weight === 0)
+                return true;
+            else
+                return false;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+    }
+
+    class Human {
+        constructor(_name, _gender, _weight) {
+            this.name = _name;
+            this.gender = _gender;
+            this.weight = _weight;
+        }
+
+        isMale() {
+            return this.gender;
+        }
+
+        setGender(_gender) {
+            this.gender = _gender;
+        }
+
+        checkApple(apple) {
+            this.apple = apple;
+            return this.apple.getWeight();
+        }
+
+        eat(apple) {
+            if (this.apple.weight > 0) {
+                this.weight++;
+                this.apple.decrease();
+            }
+        }
+
+        sayString(str) {
+            document.write(str);
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(_name) {
+            this.name = _name;
+        }
+
+        getWeightHuman() {
+            return this.weight;
+        }
+
+        setWeight(_weight) {
+            this.weight = _weight;
+        }
+    }
+
+    let apple = new Apple(20);
+    let human1 = new Human("adam", true, 60);
+    let human2 = new Human("eva", false, 50);
+    document.write("Adam và eva nói chuyện:" + "<br>");
+    human1.sayString("Chào Eva" + "<br>");
+    human2.sayString("Chào Adam" + "<br><br>");
+    document.write("Adam kiểm tra khối lượng quả táo: " + human1.checkApple(apple) + "<br>");
+    document.write("Eva kiểm tra khối lượng quả táo: " + human2.checkApple(apple) + "<br><br>");
+
+    human1.eat(apple);
+    human2.eat(apple);
+    document.write("Cân nặng của Adam sau khi ăn: " + human1.getWeightHuman() + "<br>");
+    document.write("Cân nặng của Eva sau khi ăn: " + human2.getWeightHuman() + "<br>");
+    document.write("Kiểm tra lại khối lượng quả táo: " + apple.getWeight() + "<br>");
+
+</script>
+</body>
+</html>
