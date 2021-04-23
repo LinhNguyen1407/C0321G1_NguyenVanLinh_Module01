@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 35px;
+        }
+
+        .btn {
+            width: 85px
+        }
+    </style>
+</head>
+<body>
+<h2>Xổ Số Vietlot</h2>
+<p id="hienThiOChon"></p>
+<p id="hienThiSoChon"></p>
+<p id="ketQuaQuaySo"></p>
+<br>
+<button class="btn" onclick="muaVe()">Mua vé</button>
+<button class="btn" onclick="xacNhanVe()">Xác Nhận</button>
+<button class="btn" onclick="quaySo()">Quay số</button>
+<button class="btn" onclick="xoaDuLieu()">Xóa dữ liệu</button>
+<p id="hienThiBangSo"></p>
+<input type="hidden" id="soDangChon">
+<script>
+    let danhSachVeSo = [];
+    let soLuongDaMua = 0;
+    function muaVe() {
+        if (soLuongDaMua > 3) {
+            alert("Bạn đã mua 4 vé, không thể mua thêm")
+        }
+        else {
+            let check;
+            do {
+                check = false;
+                let cachChon = prompt("Bạn có 2 lựa chọn: \n" +
+                    "1.Tự chọn số \n" +
+                    "2.Hệ thống tự động chọn \n" +
+                    "3.Không muốn mua nữa");
+                switch (cachChon) {
+                    case '1':
+                        alert("Ban hãy nhấp vào các ô để chọn số");
+                        chonSo1();
+                        soLuongDaMua++;
+                        break;
+                    case '2':
+                        chonSoTuDong();
+                        soLuongDaMua++;
+                        break;
+                    case '3':
+                        break;
+                    default:
+                        check = true;
+                        break;
+                }
+            } while (check)
+        }
+    }
+
+    function chonSo1() {
+        let veSoChon = '<input id="veso1" onclick="chonSo(`veso1`)" type="number">\n' +
+            '<input id="veso2" onclick="chonSo(`veso2`)" type="number">\n' +
+            '<input id="veso3" onclick="chonSo(`veso3`)" type="number">\n' +
+            '<input id="veso4" onclick="chonSo(`veso4`)" type="number">\n' +
+            '<input id="veso5" onclick="chonSo(`veso5`)" type="number">\n' +
+            '<input id="veso6" onclick="chonSo(`veso6`)" type="number">'
+
+        document.getElementById("hienThiOChon").innerHTML = veSoChon;
+    }
+
+    function hienThiBangSo() {
+        let bangSo = '<table>\n';
+        for (let i = 0; i < 10; i++) {
+            bangSo += '<tr>\n';
+            for (let j = 0; j < 10; j++) {
+                bangSo += '<td><button onclick="nhapSo(' + (i * 10 + j) + ')">' + (i * 10 + j) + '</button></td>';
+            }
+            bangSo += '\n</tr>\n';
+        }
+        bangSo += '</table>';
+        document.getElementById("hienThiBangSo").innerHTML = bangSo;
+    }
+
+    function chonSo(veso) {
+        document.getElementById("soDangChon").value = veso;
+        hienThiBangSo();
+
+    }
+
+    function nhapSo(number) {
+        let veso = document.getElementById("soDangChon").value;
+
+        switch (veso) {
+            case "veso1":
+                document.getElementById("veso1").value = number;
+                break;
+            case "veso2":
+                document.getElementById("veso2").value = number;
+                break;
+            case "veso3":
+                document.getElementById("veso3").value = number;
+                break;
+            case "veso4":
+                document.getElementById("veso4").value = number;
+                break;
+            case "veso5":
+                document.getElementById("veso5").value = number;
+                break;
+            case "veso6":
+                document.getElementById("veso6").value = number;
+                break;
+        }
+    }
+
+    function xacNhanVe() {
+        let veSo1 = document.getElementById("veso1").value;
+        let veSo2 = document.getElementById("veso2").value;
+        let veSo3 = document.getElementById("veso3").value;
+        let veSo4 = document.getElementById("veso4").value;
+        let veSo5 = document.getElementById("veso5").value;
+        let veSo6 = document.getElementById("veso6").value;
+        danhSachVeSo.push(veSo1, veSo2, veSo3, veSo4, veSo5, veSo6);
+        document.getElementById("hienThiBangSo").innerHTML = "";
+        document.getElementById("veso1").value = "";
+        document.getElementById("veso2").value = "";
+        document.getElementById("veso3").value = "";
+        document.getElementById("veso4").value = "";
+        document.getElementById("veso5").value = "";
+        document.getElementById("veso6").value = "";
+        document.getElementById("hienThiSoChon").innerHTML = "Vé số bạn chọn: " + veSo1 + " : " + veSo2 + " : " + veSo3 + " : " + veSo4 + " : " + veSo5 + " : " + veSo6;
+    }
+
+    function chonSoTuDong() {
+        let veSoTuDong = [];
+        do {
+            let number = Math.floor(Math.random() * 100);
+            if (veSoTuDong.indexOf(number) === -1) {
+                veSoTuDong.push(number);
+            }
+        } while (veSoTuDong.length < 6)
+        let veSo1 = veSoTuDong[0];
+        let veSo2 = veSoTuDong[1];
+        let veSo3 = veSoTuDong[2];
+        let veSo4 = veSoTuDong[3];
+        let veSo5 = veSoTuDong[4];
+        let veSo6 = veSoTuDong[5];
+        danhSachVeSo.push(veSo1, veSo2, veSo3, veSo4, veSo5, veSo6);
+        document.getElementById("hienThiSoChon").innerHTML = "Vé số bạn chọn: " + veSo1 + " : " + veSo2 + " : " + veSo3 + " : " + veSo4 + " : " + veSo5 + " : " + veSo6;
+    }
+
+    function quaySo() {
+        let ketQuaQuaySo = [];
+        do {
+            let number = Math.floor(Math.random() * 100);
+            if (ketQuaQuaySo.indexOf(number) === -1) {
+                ketQuaQuaySo.push(number);
+            }
+        } while (ketQuaQuaySo.length < 6)
+
+        document.getElementById("ketQuaQuaySo").innerHTML = "Kết quả quay số: " + ketQuaQuaySo.join(" : ");
+        let count = 0;
+        for (let j = 0; j < danhSachVeSo.length; j++) {
+            for (let k = 0; k < ketQuaQuaySo.length; k++) {
+                if (danhSachVeSo[j] === ketQuaQuaySo[k]) {
+                    count++;
+                    break;
+                }
+            }
+        }
+        switch (count) {
+            case 3:
+                alert("Chúc mừng bạn trúng giải khuyến khích.Bạn nhận được 100k");
+                break;
+            case 5:
+                alert("Chúc mừng bạn trúng giải nhì.Bạn nhận được 10 triệu");
+                break;
+            case 6:
+                alert("Chúc mừng bạn trúng giải nhất.Bạn nhận được 10 tỉ");
+                break;
+            default:
+                alert("Chúc bạn may mắn lần sau");
+                break;
+        }
+    }
+
+    function xoaDuLieu() {
+        document.getElementById("hienThiOChon").innerHTML = "";
+        document.getElementById("hienThiSoChon").innerHTML = "";
+        document.getElementById("ketQuaQuaySo").innerHTML = "";
+        soLuongDaMua = 0;
+    }
+
+</script>
+</body>
+</html>

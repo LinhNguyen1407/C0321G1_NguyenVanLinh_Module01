@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str1 = "baa1261gh";
+    let str2 = "aa1f12ghi2b";
+    let count = 0;
+    do {
+        let temp = count;
+        for (let j = 0; j < str2.length; j++) {
+            if (str1[0] === str2[j]) {
+                str1 = str1.substring(1, str1.length);
+                str2 = str2.substring(0, j) + str2.substring(j + 1, str2.length);
+                count++;
+                break;
+            }
+        }
+        if (count === temp) {
+            str1 = str1.substring(1, str1.length);
+        }
+    } while (str1.length !== 0 && str2.length !== 0)
+    alert("Số ký tự chung của 2 chuỗi: " + count);
+</script>
+</body>
+</html>

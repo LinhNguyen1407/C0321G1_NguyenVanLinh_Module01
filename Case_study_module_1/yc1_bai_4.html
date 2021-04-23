@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let data;
+    let y1 = 5;
+    let y2 = 5
+    data = "<table cellspacing='0' cellpadding='3'>"
+    for (i = 1; i <= 5; i++) {
+        data = data + "<tr>";
+        for (j = 1; j <= 9; j++) {
+            if (y1 === j || y2 === j || i === 5) {
+                data = data + "<td>*</td>";
+            } else {
+                data = data + "<td></td>";
+            }
+
+        }
+        y1 ++;
+        y2 --;
+        data = data + "</tr>";
+    }
+    data = data + "</table>";
+    document.write(data);
+</script>
+</body>
+</html>

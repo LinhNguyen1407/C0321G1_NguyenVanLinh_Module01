@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputSymbol = prompt("Nhập ký tự cần kiểm tra: ");
+    let a = inputSymbol.toLowerCase();
+    switch (a) {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+            alert("Ký tự nhập vào là nguyên âm");
+            break;
+        default:
+            alert("Ký tự nhập vào là phụ âm");
+            break;
+    }
+
+</script>
+</body>
+</html>

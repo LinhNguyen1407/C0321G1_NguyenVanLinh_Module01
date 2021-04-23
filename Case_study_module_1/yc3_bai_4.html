@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = "1234567890";
+    let b = ("mot hai ba bon nam sau bay tam chin khong").split(" ");
+    let inputStr = prompt("Nhập số: ");
+    let result = [];
+    for (let i = 0; i<inputStr.length; i++) {
+        let index = a.indexOf(inputStr[i]);
+        if (index !== -1) {
+            result.push(b[index]);
+        }
+    }
+    alert("Kết quả in ra chữ: " + result.join(" "));
+</script>
+</body>
+</html>

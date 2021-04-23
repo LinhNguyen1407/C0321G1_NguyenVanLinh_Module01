@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    main();
+
+    function main() {
+        let str1 = chuanHoa2();
+        timTuDaiNhat(str1);
+    }
+
+    function chuanHoa() {
+        let str = prompt("Nhập chuỗi cần chuẩn hóa: ");
+        alert("Chuỗi ban đầu: \n" + str);
+        str = str.trim();
+        let a = str.charAt(0).toUpperCase();
+        str = str.substr(1);
+        str = a + str;
+        for (let i = 1; i < str.length; i++) {
+            if (str[i - 1] === ' ' && str[i] !== ' ') {
+                let b = str.charAt(i).toUpperCase();
+                str = str.replace(str.charAt(i), b);
+            } else {
+                let c = str.charAt(i).toLowerCase();
+                str = str.replace(str.charAt(i), c);
+            }
+        }
+        str = str.split(' ').filter(n => n).join(' ');
+        alert("Chuỗi được chuẩn hóa:\n" + str);
+        return str
+    }
+
+    function chuanHoa2() {
+        let str = prompt("Nhập chuỗi cần chuẩn hóa: ");
+        alert("Chuỗi ban đầu: \n" + str);
+        str = str.trim();
+        let arr = str.split(" ");
+        let output = "";
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === " ") {
+                continue;
+            } else {
+                for (let j = 0; j < arr[i].length; j++) {
+                    if (j === 0) {
+                        output += arr[i].charAt(j).toUpperCase();
+                    } else {
+                        output += arr[i].charAt(j);
+                    }
+                }x``
+            }
+            output += " ";
+        }
+        alert("Chuỗi được chuẩn hóa:\n" + output);
+        return output;
+    }
+
+    function timTuDaiNhat(str) {
+        let arrStr = str.split(' ');
+        let max = arrStr[0].length;
+        let index = 0;
+        for (let j = 0; j < arrStr.length; j++) {
+            if (arrStr[j].length > max) {
+                index = j;
+            }
+        }
+        alert("Từ dài nhất trong chuỗi: " + arrStr[index]);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function khoiTaoMang() {
+        let m = parseInt(prompt("Nhập số dòng của mảng: "));
+        let n = parseInt(prompt("Nhập số cột của mảng: "));
+        let arr = new Array(m);
+        for (let i = 0; i < m; i++) {
+            arr[i] = new Array(n);
+            for (let j = 0; j < n; j++) {
+                arr[i][j] = Math.floor((Math.random() * 100));
+            }
+        }
+        console.log(arr);
+        return arr;
+    }
+
+    function hienThiSoNguyenTo() {
+        let arr1 = khoiTaoMang();
+        let result = [];
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j < arr1[i].length; j++) {
+                let check1 = result.indexOf(arr1[i][j]);
+                let check2 = true;
+                if (arr1[i][j] < 2 || check1 !== -1) {
+                    continue;
+                } else {
+                    for (let k = 2; k <= (Math.sqrt(arr1[i][j])); k++) {
+                        if (arr1[i][j] % k === 0) {
+                            check2 = false;
+                            break;
+                        }
+                    }
+                }
+                if (check2) {
+                    result.push(arr1[i][j]);
+                }
+            }
+        }
+        return result;
+    }
+
+    let result1 = hienThiSoNguyenTo();
+    console.log(result1);
+    console.log(result1.length);
+
+</script>
+</body>
+</html>

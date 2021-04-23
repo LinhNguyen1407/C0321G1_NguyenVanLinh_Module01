@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [1,2,3,4,5,6,7];
+    let b = [1,2,3,4,8,9];
+    let c = [];
+    for (let i = 0; i<a.length; i++) {
+        let missB = a[i];
+        if (b.indexOf(missB) === -1) {
+            c.push(missB);
+        }
+    }
+    for (let i = 0; i<b.length; i++) {
+        let missA = b[i];
+        if (a.indexOf(missA) === -1) {
+            c.push(missA);
+        }
+    }
+    alert("Mảng A: " + a);
+    alert("Mảng B: " + b);
+    alert("Mảng C chứa các phần tử riêng của mảng A và Mảng B: " + c);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("Nhập vào chuỗi: ");
+    arr = Array.from(str);
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            if (j !== i) {
+                if (arr[i] === arr[j]) {
+                    arr.splice(j,1)
+                }
+            }
+        }
+    }
+    alert("Số lượng ký tự khác nhau: " + arr.length);
+</script>
+</body>
+</html>
